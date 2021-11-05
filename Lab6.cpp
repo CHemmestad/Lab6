@@ -1,8 +1,8 @@
 /*
 Caleb Hemmestad
 C++ 2021
-Due: 10/27/21
-Lab 5 Number Guessing Game
+Due: 11/10/21
+Lab 6 Binary to Decimal Conversion
 
 Description: Write a C++ program that reads characters representing binary (base 2) 
 numbers from a data file called BinaryIn.dat and translates them to decimal (base 10) 
