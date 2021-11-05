@@ -22,7 +22,7 @@ using namespace std ;
 //postcondition - resets values to be used again
 void reset ( bool &startWithZero , bool &invalid , 
 	bool &breakCheck , string &binaryNumber , 
-	int &decimal , int &binaryPos , int &y , int &x ) ;
+	unsigned int &decimal , int &binaryPos , int &y , int &x ) ;
 
 //precondition - checking to see if inputs are valid
 //postcondition - changing bools so nothing is outputted if input was invalid
@@ -32,12 +32,12 @@ void conditionCheck ( bool &breakCheck ,
 //precondition - cant do math chars
 //postcondition - converts chars to ints , adds to string for output , calculates decimal
 void binaryConversion ( char &binary , int binaryPos , 
-	int &oneZero , bool &startWithZero , int &decimal , 
+	int &oneZero , bool &startWithZero , unsigned int &decimal , 
 	string &binaryNumber , int &y , ifstream &secondfile ) ;
 
 //precondition - nothing is centered when outputted
 //postcondition - centers output
-void centering ( bool invalid , int decimal , 
+void centering ( bool invalid , unsigned int decimal , 
 	int &x , int y , string binaryNumber ) ;
 
 //precondition - dont know how many binary numbers there are for calculating decimal
@@ -108,7 +108,7 @@ void header ( ) {
 	cout << setw (30) << "Binary Number" << "\t\tDecimal Equivalent" << endl << endl ;
 }
 
-void reset ( bool &startWithZero , bool &invalid , bool &breakCheck , string &binaryNumber , int &decimal , int &binaryPos , int &y , int &x ) {
+void reset ( bool &startWithZero , bool &invalid , bool &breakCheck , string &binaryNumber , unsigned int &decimal , int &binaryPos , int &y , int &x ) {
 	startWithZero = true ;
 	invalid = true ;
 	breakCheck = true ;
@@ -132,7 +132,7 @@ void conditionCheck ( bool &breakCheck , bool &invalid , char file ) {
 	}
 }
 
-void binaryConversion ( char &binary , int binaryPos , int &oneZero , bool &startWithZero , int &decimal , string &binaryNumber , int &y , ifstream &secondfile )  {
+void binaryConversion ( char &binary , int binaryPos , int &oneZero , bool &startWithZero , unsigned int &decimal , string &binaryNumber , int &y , ifstream &secondfile )  {
 	for ( int x = binaryPos-1 ; x >= 0 ; x-- ) {
 		secondfile.get ( binary ) ; //getting information again for calculations
 		if ( binary == '0' ) {
@@ -152,7 +152,7 @@ void binaryConversion ( char &binary , int binaryPos , int &oneZero , bool &star
 	}
 }
 
-void centering ( bool invalid , int decimal , int &x , int y , string binaryNumber ) {
+void centering ( bool invalid , unsigned int decimal , int &x , int y , string binaryNumber ) {
 	if ( !invalid ) {
 		cout << setw (33) << "Bad digit on input" ;
 	}
